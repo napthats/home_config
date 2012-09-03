@@ -1,17 +1,18 @@
 set autoindent
 set expandtab
 
-inoremap {} {}<Left>
-inoremap [] []<Left>
-inoremap () ()<Left>
-inoremap "" ""<Left>
-inoremap '' ''<Left>
-inoremap <> <><Left>
+let loaded_matchparen = 1
+set showmatch
+inoremap <C-d> <Del>
+nnoremap <C-h> X
 
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-j> <Esc>
 
+nnoremap Y y$
+
+nnoremap s<Space> i<Space><Esc>l   
 nnoremap sa ia<Esc>l
 nnoremap sb ib<Esc>l
 nnoremap sc ic<Esc>l
@@ -77,4 +78,14 @@ nnoremap s. i.<Esc>l
 nnoremap s> i><Esc>l
 nnoremap s/ i/<Esc>l
 nnoremap s? i?<Esc>l
+
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<TAB>"
+    else
+        return "\<C-N>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
