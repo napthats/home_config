@@ -8,7 +8,10 @@ nnoremap <C-h> X
 
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
-inoremap <C-j> <Esc>
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+noremap <C-j> <Esc>
+noremap! <C-j> <Esc>
 
 nnoremap Y y$
 
