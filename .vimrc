@@ -1,3 +1,5 @@
+let g:EasyMotion_leader_key = '<Leader>' 
+
 set autoindent
 set expandtab
 
