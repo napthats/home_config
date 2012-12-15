@@ -1,4 +1,7 @@
 let g:EasyMotion_leader_key = '<Space>' 
+autocmd BufNewFile,BufRead *.scala set filetype=scala
+
+set undofile
 
 set notimeout
 set autoindent
@@ -9,6 +12,8 @@ set showmatch
 inoremap <C-d> <Del>
 nnoremap <C-h> X
 
+inoremap <C-a> <Esc>^i
+inoremap <C-e> <End>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-n> <Down>
